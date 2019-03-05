@@ -53,7 +53,7 @@ window.onload = function(){
   }
 };
 
-$(document).on('click','#select .name',function(){
+$(document).on('click touchstart','#select .name',function(){
   if($(this).nextAll('.inner').css('display') == 'none'){
     $(this).nextAll('.inner').css('display','block');
   }else{
@@ -63,7 +63,7 @@ $(document).on('click','#select .name',function(){
 //  $(this).nextAll('.inner').slideToggle();
 });
 
-$(document).on('click','#select .inner .name',function(){
+$(document).on('click touchstart','#select .inner .name',function(){
   if($(this).nextAll('table').css('display') == 'none'){
     $(this).nextAll('table').css('display','block');
   }else{
