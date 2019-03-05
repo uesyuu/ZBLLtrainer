@@ -226,7 +226,15 @@ $('#exceedAlgDisplay').click(function(){
   }
 });
 
-$(window).keydown(function(){
+$(window).on('keydown',function(){
+  timerRun();
+});
+
+$(timerDisplay).on('touchstart',function(){
+  timerRun();
+});
+
+function timerRun(){
   if($('#select').css('display') == 'none'){
     if(startTime == 0){
       startTime = Date.now();
@@ -279,4 +287,4 @@ $(window).keydown(function(){
       }
     }
   }
-});
+}
