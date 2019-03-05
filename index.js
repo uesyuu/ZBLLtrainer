@@ -5,7 +5,7 @@ var listZBLL = {
   H:['BBFF','FBFB','RFLF','RLFF'],
   Pi:['BFFB','FBFB','FRFL','FRLF','LFRF','RFFL'],
   S:['FBBF','FBFB','FLFR','FLRF','LFFR','LFRF'],
-  AS:['FBBF','FBFB','FRFL','FRLF','LFRF','RFFL']
+  aS:['FBBF','FBFB','FRFL','FRLF','LFRF','RFFL']
 };
 
 var listPattern = ['AsA','AsC','AsO','CsA','CsC','CsO','CxO','OsA','OsC','OsO','OxC','OxO'];
