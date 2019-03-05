@@ -22,26 +22,30 @@
     </table>
   </div>
   <div id="timer" class="container" style="display:none;">
-    <a href="#" id="sessionReset">セッションリセット</a>
-    <br>
-    <select id="exceedSelect">
-      <option value="3">3秒</option>
-      <option value="4" selected>4秒</option>
-      <option value="5">5秒</option>
-    </select>
-    <input type="button" id="exceedRecord" value="を超えた手順を記録">
-    <span><span id="exceedTime1">4</span>秒を超えた手順を記録中</span>
-    <br>
-    <a href="#" id="exceedStart"><span id="exceedTime2">4</span>秒を超えた手順のみを出題</a>
-    <a href="#" id="exceedReset"><span id="exceedTime3">4</span>秒を超えた手順の記録をリセット</a>
-    <a href="#" id="exceedAlgDisplay"><span id="exceedTime4">4</span>秒を超えた全手順を<span id="hyoji">表示</span></a>
-    <br>
-    <table border="1" style="width:900px;">
-      <tr><td id="num" colspan="2"></td></tr>
-      <tr><td id="scramble" colspan="2"></td></tr>
-      <tr><td id="timerDisplay" width="600" height="200" style="text-align:center; font-size:30px;"></td><td id="timelist" width="300" height="200"></td></tr>
-    </table>
+  <div class="row">
+    <div class="col-12">
+      <a href="#" id="sessionReset">セッションリセット</a>
+    </div>
+    <div class="col-10">
+      <select id="exceedSelect">
+        <option value="3">3秒</option>
+        <option value="4" selected>4秒</option>
+        <option value="5">5秒</option>
+      </select>
+      <input type="button" id="exceedRecord" value="を超えた手順を記録">
+      <span><span id="exceedTime1">4</span>秒を超えた手順を記録中</span>
+    </div>
+    <div class="col-12">
+      <a href="#" id="exceedStart"><span id="exceedTime2">4</span>秒を超えた手順のみを出題</a>
+      <a href="#" id="exceedReset"><span id="exceedTime3">4</span>秒を超えた手順の記録をリセット</a>
+      <a href="#" id="exceedAlgDisplay"><span id="exceedTime4">4</span>秒を超えた全手順を<span id="hyoji">表示</span></a>
+    </div>
+    <div class="col-12 border" id="num"></div>
+    <div class="col-12 border" id="scramble"></div>
+    <div class="col-6 border" id="timerDisplay" height="200" style="text-align:center; font-size:30px;"></div>
+    <div class="col-6 border" id="timelist" height="200"></div>
     <table id="exceedAlg" style="display:none;"></table>
+  </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
