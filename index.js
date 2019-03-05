@@ -43,7 +43,7 @@ window.onload = function(){
     }
     table += '</tr></table>';
     $('#'+i+'case').append(table);
-    console.log(i);
+//    console.log(i);
   }
 
   $('#exceedAlg').html('');
@@ -54,11 +54,22 @@ window.onload = function(){
 };
 
 $(document).on('click','#select .name',function(){
-  $(this).nextAll('.inner').slideToggle(200);
+  if($(this).nextAll('.inner').css('display') == 'none'){
+    $(this).nextAll('.inner').css('display','block');
+  }else{
+    $(this).nextAll('.inner').css('display','none');
+  }
+//  console.log($(this).nextAll('.inner'));
+//  $(this).nextAll('.inner').slideToggle();
 });
 
 $(document).on('click','#select .inner .name',function(){
-  $(this).nextAll('table').slideToggle(200);
+  if($(this).nextAll('table').css('display') == 'none'){
+    $(this).nextAll('table').css('display','block');
+  }else{
+    $(this).nextAll('table').css('display','none');
+  }
+//  $(this).nextAll('table').slideToggle();
 });
 
 $(document).on('click','#select img',function(){
