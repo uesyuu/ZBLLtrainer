@@ -1,0 +1,9 @@
+.inner{
+  display: none;
+}
+
+.name{
+  display: block;
+  width: 50px;
+  background: lightblue
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+  <a href="#" id="switch">タイマーに移動</a>
+  <div id="select" style="display:block;">
+    <table border="1">
+      <tr><td id="Ucase"></td></tr>
+      <tr><td id="Tcase"></td></tr>
+      <tr><td id="Lcase"></td></tr>
+      <tr><td id="Hcase"></td></tr>
+      <tr><td id="Picase"></td></tr>
+      <tr><td id="Scase"></td></tr>
+      <tr><td id="AScase"></td></tr>
+    </table>
+  </div>
+  <div id="timer" style="display:none;">
+    <a href="#" id="sessionReset">セッションリセット</a>
+    <br>
+    <select id="exceedSelect">
+      <option value="3">3秒</option>
+      <option value="4" selected>4秒</option>
+      <option value="5">5秒</option>
+    </select>
+    <input type="button" id="exceedRecord" value="を超えた手順を記録">
+    <span><span id="exceedTime1">4</span>秒を超えた手順を記録中</span>
+    <br>
+    <a href="#" id="exceedStart"><span id="exceedTime2">4</span>秒を超えた手順のみを出題</a>
+    <a href="#" id="exceedReset"><span id="exceedTime3">4</span>秒を超えた手順の記録をリセット</a>
+    <a href="#" id="exceedAlgDisplay"><span id="exceedTime4">4</span>秒を超えた全手順を<span id="hyoji">表示</span></a>
+    <br>
+    <table border="1">
+      <tr><td id="num" colspan="2"></td></tr>
+      <tr><td id="scramble" colspan="2"></td></tr>
+      <tr><td id="timerDisplay" width="300" style="text-align:center;"></td><td id="timelist"  width="150"><br></td></tr>
+    </table>
+    <table id="exceedAlg" style="display:none;"></table>
+  </div>
+  <script src="scramble.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
