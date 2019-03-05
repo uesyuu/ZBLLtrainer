@@ -43,6 +43,7 @@ window.onload = function(){
     }
     table += '</tr></table>';
     $('#'+i+'case').append(table);
+    console.log(i);
   }
 
   $('#exceedAlg').html('');
