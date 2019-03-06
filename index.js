@@ -160,22 +160,27 @@ function generateScramble(scramble){
 var scrambleID;
 
 function timer(){
-  var keys = Object.keys(listSelected);
-  $('#num').text(keys.length + 'selected');
+//  var keys = Object.keys(listSelected);
+//  $('#num').text(keys.length + 'selected');
 
   var keys = Object.keys(listSelected);
   if(exceedFlag && localStorage.length != 0){
+    $('#num').text(localStorage.length + 'selected');
     var random1 = Math.floor(Math.random() * localStorage.length);
     var random2 = Math.floor(Math.random() * 12);
     scrambleID = localStorage.key(random1);
-    console.log(scrambleID);
-    $('#scramble').text(generateScramble(localStorage[scrambleID].split('_')[random2]));
+//    console.log(localStorage[scrambleID]);
+    var scrambleList = localStorage[scrambleID];
+    scrambleList = scrambleList.split(',');
+    $('#scramble').text(generateScramble(scrambleList[random2]));
   }else if(!exceedFlag && keys.length != 0){
+    $('#num').text(keys.length + 'selected');
     var random1 = Math.floor(Math.random() * keys.length);
     var random2 = Math.floor(Math.random() * 12);
     scrambleID = Object.keys(listSelected)[random1];
     $('#scramble').text(generateScramble(listSelected[scrambleID][random2]));
   }else{
+    $('#num').text(keys.length + 'selected');
     $('#scramble').text('No pattern selected');
   }
 
@@ -246,7 +251,7 @@ $('#exceedReset').click(function(){
 });
 
 $('#exceedAlgDisplay').click(function(){
-  console.log($('#exceedAlg').css('display'));
+//  console.log($('#exceedAlg').css('display'));
   if($('#exceedAlg').css('display') == 'none'){
     $('#hyoji').text('非表示');
     $('#exceedAlg').css('display','block');
@@ -301,16 +306,20 @@ function timerRun(){
       
       var keys = Object.keys(listSelected);
       if(exceedFlag && localStorage.length != 0){
+        $('#num').text(localStorage.length + 'selected');
         var random1 = Math.floor(Math.random() * localStorage.length);
         var random2 = Math.floor(Math.random() * 12);
         scrambleID = localStorage.key(random1);
-        $('#scramble').text(generateScramble(localStorage[scrambleID].split('_')[random2]));
+        var scrambleList = localStorage[scrambleID];
+        scrambleList = scrambleList.split(',');
+        $('#scramble').text(generateScramble(scrambleList[random2]));
       }else if(!exceedFlag && keys.length != 0){
         var random1 = Math.floor(Math.random() * keys.length);
         var random2 = Math.floor(Math.random() * 12);
         scrambleID = Object.keys(listSelected)[random1];
         $('#scramble').text(generateScramble(listSelected[scrambleID][random2]));
       }else if(exceedFlag && localStorage.length == 0){
+        $('#num').text(localStorage.length + 'selected');
         $('#scramble').text('出題された全ての手順で' + exceedSecond + '秒を切りました！');
       }else{
         $('#scramble').text('No pattern selected');
