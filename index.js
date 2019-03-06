@@ -13,12 +13,12 @@ var listPattern = ['AsA','AsC','AsO','CsA','CsC','CsO','CxO','OsA','OsC','OsO','
 var listSelected = {};
 
 window.onload = function(){
-  var text = ['ZBLL練習用タイマーです。\n',
+/*  var text = ['ZBLL練習用タイマーです。\n',
   '手順選択画面で手順を選択するとそれらの手順の練習ができます。\n',
   '最初に「x秒を超えた手順を記録」ボタンを押しておくと、その秒数を超えた手順が記録されます。\n',
   'ある程度測り終わった後「x秒を超えた手順のみを出題」ボタンを押すと、x秒を超えた手順のみを出題のみを出題してくれます。',
   '「x秒を超えた全手順を表示」ボタンを押すと、x秒を超えた全手順がタイマー下に表示されます。']
-  alert(text[0] + text[1] + text[2] + text[3] + text[4]);
+  alert(text[0] + text[1] + text[2] + text[3] + text[4]);*/
 
   for(var i in listZBLL){
     var table = '<span class="name">' + i + '</span>';

@@ -10,16 +10,27 @@
 </head>
 <body>
   <a href="#" id="switch">タイマーに移動</a>
-  <div id="select" style="display:block;">
-    <table border="1">
-      <tr><td id="Ucase"></td></tr>
-      <tr><td id="Tcase"></td></tr>
-      <tr><td id="Lcase"></td></tr>
-      <tr><td id="Hcase"></td></tr>
-      <tr><td id="Picase"></td></tr>
-      <tr><td id="Scase"></td></tr>
-      <tr><td id="aScase"></td></tr>
-    </table>
+  <div id="select" class="container" style="display:block;">
+    <div class="row">
+      <div class="col-6">
+        <table border="1">
+          <tr><td id="Ucase"></td></tr>
+          <tr><td id="Tcase"></td></tr>
+          <tr><td id="Lcase"></td></tr>
+          <tr><td id="Hcase"></td></tr>
+          <tr><td id="Picase"></td></tr>
+          <tr><td id="Scase"></td></tr>
+          <tr><td id="aScase"></td></tr>
+        </table>
+      </div>
+      <div class="col-6">
+        <p>ZBLL練習用タイマーです。<br>
+            手順選択画面で手順を選択するとそれらの手順の練習ができます。<br>
+            最初に「x秒を超えた手順を記録」ボタンを押しておくと、その秒数を超えた手順が記録されます。<br>
+            ある程度測り終わった後「x秒を超えた手順のみを出題」ボタンを押すと、x秒を超えた手順のみを出題のみを出題してくれます。<br>
+            「x秒を超えた全手順を表示」ボタンを押すと、x秒を超えた全手順がタイマー下に表示されます。</p>
+      </div>
+    </div>
   </div>
   <div id="timer" class="container" style="display:none;">
   <div class="row">
@@ -42,8 +53,8 @@
     </div>
     <div class="col-12 border" id="num"></div>
     <div class="col-12 border" id="scramble"></div>
-    <div class="col-6 border" id="timerDisplay" height="200" style="text-align:center; font-size:30px;"></div>
-    <div class="col-6 border" id="timelist" height="200"></div>
+    <div class="col-6 border" id="timerDisplay" style="height:300px; text-align:center; font-size:30px;"></div>
+    <div class="col-6 border" id="timelist" style="height:300px;"></div>
     <table id="exceedAlg" style="display:none;"></table>
   </div>
   </div>
