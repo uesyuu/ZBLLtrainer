@@ -138,6 +138,25 @@ $('#switch').click(function(){
   }
 });
 
+function generateScramble(scramble){
+  scramble = scramble.split(' ');
+  scramble = scramble.reverse();
+  var scrambleSequence = '';
+  for(var i=0;i<scramble.length;i++){
+    scramble[i] = scramble[i].split('');
+    if(scramble[i].length == 1){
+      scramble[i].push("'");
+    }else if(scramble[i].length == 2 && scramble[i][1] == "'"){
+      scramble[i].pop();
+    }
+    for(var j=0;j<scramble[i].length;j++){
+      scrambleSequence += scramble[i][j];
+    }
+    scrambleSequence += ' ';
+  }
+  return scrambleSequence;
+}
+
 var scrambleID;
 
 function timer(){
@@ -150,12 +169,12 @@ function timer(){
     var random2 = Math.floor(Math.random() * 12);
     scrambleID = localStorage.key(random1);
     console.log(scrambleID);
-    $('#scramble').text(localStorage[scrambleID].split('_')[random2]);
+    $('#scramble').text(generateScramble(localStorage[scrambleID].split('_')[random2]));
   }else if(!exceedFlag && keys.length != 0){
     var random1 = Math.floor(Math.random() * keys.length);
     var random2 = Math.floor(Math.random() * 12);
     scrambleID = Object.keys(listSelected)[random1];
-    $('#scramble').text(listSelected[scrambleID][random2]);
+    $('#scramble').text(generateScramble(listSelected[scrambleID][random2]));
   }else{
     $('#scramble').text('No pattern selected');
   }
@@ -285,12 +304,12 @@ function timerRun(){
         var random1 = Math.floor(Math.random() * localStorage.length);
         var random2 = Math.floor(Math.random() * 12);
         scrambleID = localStorage.key(random1);
-        $('#scramble').text(localStorage[scrambleID].split('_')[random2]);
+        $('#scramble').text(generateScramble(localStorage[scrambleID].split('_')[random2]));
       }else if(!exceedFlag && keys.length != 0){
         var random1 = Math.floor(Math.random() * keys.length);
         var random2 = Math.floor(Math.random() * 12);
         scrambleID = Object.keys(listSelected)[random1];
-        $('#scramble').text(listSelected[scrambleID][random2]);
+        $('#scramble').text(generateScramble(listSelected[scrambleID][random2]));
       }else if(exceedFlag && localStorage.length == 0){
         $('#scramble').text('出題された全ての手順で' + exceedSecond + '秒を切りました！');
       }else{
